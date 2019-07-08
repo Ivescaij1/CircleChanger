@@ -242,7 +242,7 @@ class CircleChanger(object):
             :type amount_to_swell_or_shrink: int
         """
         ################################################################
-        # TODO: 4.
+        # DONE: 4.
         #   First, READ the doc-string (specification) above.
         #   Second, READ the   run_test_swell_or_shrink_once   function
         #   (below).  Third, implement and test this method.
@@ -270,6 +270,18 @@ class CircleChanger(object):
         #   Simply   ** ASK FOR HELP **
         #            if this does not make sense to you.
         ################################################################
+        new_radius = self.circle.radius + amount_to_swell_or_shrink
+        if new_radius >= 1:
+            self.circle.radius = new_radius
+        else:
+            self.circle.radius = 1
+
+        r_thickness = random.randrange(3, 16)
+        self.circle.outline_thickness = r_thickness
+
+        r_index = random.randrange(0, len(self.colors))
+        r_color = self.colors[r_index]
+        self.circle.fill_color = r_color
 
     def swell_or_shrink_repeatedly(self,
                                    amount_to_swell_or_shrink,
