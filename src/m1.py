@@ -36,8 +36,8 @@ def main():
     #     run_test_swell_or_shrink_repeatedly()
     # if m1_tests.is_implemented('swallow'):
     #     run_test_swallow()
-    if m1_tests.is_implemented('change_color'):
-        run_test_change_color()
+    # if m1_tests.is_implemented('change_color'):
+    #     run_test_change_color()
     if m1_tests.is_implemented('change_to_original_color'):
         run_test_change_to_original_color()
     if m1_tests.is_implemented('change_to_next_color_in_tuple'):
@@ -104,6 +104,8 @@ class CircleChanger(object):
         circle.fill_color = fill_color
         self.circle = circle
         self.colors = colors
+
+        self.initial_color = fill_color
 
     def __repr__(self):
         """
@@ -429,11 +431,12 @@ class CircleChanger(object):
                was constructed.
         """
         ################################################################
-        # TODO: 8.
+        # DONE: 8.
         #   First, READ the doc-string (specification) above.
         #   Second, READ the   run_test_change_to_original_color   function
         #   (below).  Third, implement and test this method.
         ################################################################
+        self.circle.fill_color = self.initial_color
 
     def change_to_next_color_in_tuple(self):
         """
